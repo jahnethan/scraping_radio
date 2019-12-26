@@ -3,7 +3,8 @@ import requests
 import re
 import csv
 
-page  = requests.get("https://radio.capital.pe/programas/viajeaotradimension")
+headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'}
+page  = requests.get("https://radio.capital.pe/programas/viajeaotradimension", headers = headers)
 soup= BeautifulSoup(page.content, 'html.parser')
 box = soup.find(class_='box-mod') #finding the box where there are the information
 
